@@ -1,3 +1,4 @@
+
 export const BREAK_INCREMENT = () => {
     return (dispatch) => {
         dispatch({
@@ -14,6 +15,7 @@ export const BREAK_DECREMENT = () => {
         })
     }
 }
+
 export const SESSION_INCREMENT = () => {
     return (dispatch) => {
         dispatch({
@@ -47,6 +49,14 @@ export const MINUTES_SUBTRACTION = () => {
         })
     }
 }
+export const SECONDS_SUBTRACTION = () => {
+    return (dispatch) => {
+        dispatch({
+            type: 'SECONDS_SUBTRACTION',
+            payload: 1
+        })
+    }
+}
 export const SECONDS = (seconds) => {
     return (dispatch) => {
         dispatch({
@@ -63,6 +73,14 @@ export const START_STOP = () => {
         })
     }
 }
+export const COUNTED_DOWN = (session_length) => {
+    return dispatch => {
+        dispatch({
+            type: 'COUNTED_DOWN',
+            payload: session_length
+        })
+    }
+}
 export const RESET = () => {
     return dispatch => {
         dispatch({
@@ -75,6 +93,30 @@ export const PAUSE = () => {
     return dispatch => {
         dispatch({
             type: 'PAUSE',
+        })
+    }
+}
+
+export const SET_INTERVAL = (func) => {
+    return dispatch => {
+        dispatch({
+            type: 'SET_INTERVAL',
+            payload: func
+        })
+    }
+}
+export const CLEAR_INTERVAL = (intervalID) => {
+    return dispatch => {
+        dispatch({
+            type: 'CLEAR_INTERVAL',
+            payload: intervalID
+        })
+    }
+}
+export const LIMIT_REACH = () => {
+    return dispatch => {
+        dispatch({
+            type: 'LIMIT_REACH'
         })
     }
 }

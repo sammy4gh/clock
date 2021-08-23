@@ -8,24 +8,25 @@ import {actionCreators} from "../../state";
 const StartStop = (props) => {
 
     const start_stop = useSelector((state) => state.start_stop)
-
+    const intervalID = useSelector((state) => state.timer)
     const dispatch = useDispatch()
-    const {MINUTES_SUBTRACTION, SECONDS, START_STOP, PAUSE} = bindActionCreators(actionCreators, dispatch)
-
+    const {
+        SECONDS_SUBTRACTION: SECONDS_SUBTRACTION,
+        SECONDS,
+        START_STOP,
+        PAUSE,
+        SET_INTERVAL,
+        CLEAR_INTERVAL
+    } = bindActionCreators(actionCreators, dispatch)
 
     return (
 
 
         <div id={'start_stop'} onClick={() => {
-            var timer = setInterval(() => MINUTES_SUBTRACTION(), 1000)
 
             START_STOP()
 
-            while (!start_stop) {
-                return timer
-                console.log('clear')
-            }
-
+            start_stop ? CLEAR_INTERVAL(intervalID) : SET_INTERVAL(setInterval(() => SECONDS_SUBTRACTION(), 1000))
 
         }}>
             {start_stop ? <BiPauseCircle/> : <BiPlayCircle/>}

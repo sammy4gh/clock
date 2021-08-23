@@ -4,6 +4,7 @@ import sessionLengthReducer from "./sessionLengthReducer";
 import secondsReducer from "./secondsReducer"
 import minutesReducer from "./minutesReducer";
 import startStopReducer from "./startStopReducer";
+import timerReducer from "./timerReducer";
 
 
 const reducers = combineReducers({
@@ -11,7 +12,8 @@ const reducers = combineReducers({
     session_length: sessionLengthReducer,
     seconds: secondsReducer,
     minutes: minutesReducer,
-    start_stop: startStopReducer
+    start_stop: startStopReducer,
+    timer: timerReducer,
 })
 
 export default reducers;

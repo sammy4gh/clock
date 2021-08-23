@@ -4,6 +4,10 @@ const sessionLengthReducer = (state = 25, action) => {
             return state + action.payload
         case 'SESSION_DECREMENT':
             return state - action.payload
+        case 'SET_LIMIT':
+            return state;
+        case 'RESET':
+            return state = 25;
         default:
             return state
     }

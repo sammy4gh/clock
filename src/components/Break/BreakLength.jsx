@@ -1,14 +1,23 @@
 import React from 'react';
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {bindActionCreators} from "redux";
+import {actionCreators} from "../../state";
+
 
 const BreakLength = (props) => {
 
-    const break_Length = useSelector(state => state.break_length)
+    const dispatch = useDispatch()
+
+    const break_length = useSelector(state => state.break_length)
+    const {} = bindActionCreators(actionCreators, dispatch)
 
 
     return (
         <div id="break-length">
-            {break_Length}
+
+            {
+                break_length
+            }
         </div>
     );
 }

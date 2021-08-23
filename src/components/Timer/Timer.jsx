@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {bindActionCreators} from "redux";
 import {actionCreators} from "../../state";
@@ -7,7 +7,13 @@ import {actionCreators} from "../../state";
 const Timer = (props) => {
 
     const dispatch = useDispatch()
-    const {MINUTES_SUBTRACTION, SECONDS} = bindActionCreators(actionCreators, dispatch)
+    const {
+        MINUTES_SUBTRACTION,
+        SECONDS_SUBTRACTION,
+        SECONDS,
+        START_STOP,
+        COUNTED_DOWN
+    } = bindActionCreators(actionCreators, dispatch)
 
 
     const break_length = useSelector(state => state.break_length)
@@ -16,13 +22,7 @@ const Timer = (props) => {
     const minutes = useSelector(state => state.minutes.minutes())
     const seconds = useSelector(state => state.minutes.seconds())
 
-    console.log('time',)
 
-
-    useEffect(() => {
-
-
-    })
 
 
     return (
@@ -30,6 +30,7 @@ const Timer = (props) => {
             <h3 id="timer-label">Session</h3>
             <h1 id="time-left">
                 {` ${minutes < 10 ? 0 + '' + minutes : minutes} : ${seconds < 10 ? 0 + '' + seconds : seconds} `}
+                {minutes < 1 && seconds < 1 ? COUNTED_DOWN(session_length) : null}
             </h1>
         </div>
     );
