@@ -1,4 +1,4 @@
-const breakLengthReducer = (state = 5, action) => {
+const breakLengthReducer = (state = 1, action) => {
     switch (action.type) {
         case 'BREAK_INCREMENT':
             return state + action.payload
@@ -7,7 +7,7 @@ const breakLengthReducer = (state = 5, action) => {
         case 'SET_LIMIT':
             return state;
         case 'RESET':
-            return state = 5;
+            return state = 1;
         default:
             return state
     }

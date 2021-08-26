@@ -25,8 +25,7 @@ const StartStop = (props) => {
         <div id={'start_stop'} onClick={() => {
 
             START_STOP()
-
-            start_stop ? CLEAR_INTERVAL(intervalID) : SET_INTERVAL(setInterval(() => SECONDS_SUBTRACTION(), 1000))
+            start_stop === true ? CLEAR_INTERVAL(intervalID) : SET_INTERVAL(setInterval(() => SECONDS_SUBTRACTION(), 1000))
 
         }}>
             {start_stop ? <BiPauseCircle/> : <BiPlayCircle/>}

@@ -5,6 +5,8 @@ import secondsReducer from "./secondsReducer"
 import minutesReducer from "./minutesReducer";
 import startStopReducer from "./startStopReducer";
 import timerReducer from "./timerReducer";
+import msgReducer from "./msgReducer"
+import soundClipReducer from "./soundClipReducer";
 
 
 const reducers = combineReducers({
@@ -14,6 +16,8 @@ const reducers = combineReducers({
     minutes: minutesReducer,
     start_stop: startStopReducer,
     timer: timerReducer,
+    msg: msgReducer,
+    soundClip: soundClipReducer
 })
 
 export default reducers;

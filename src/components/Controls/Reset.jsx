@@ -10,15 +10,18 @@ const Reset = (props) => {
 
     const intervalID = useSelector((state) => state.timer)
 
-    const {RESET, CLEAR_INTERVAL, START_STOP} = bindActionCreators(actionCreators, dispatch)
+    const {RESET, CLEAR_INTERVAL, START_STOP, SESSION} = bindActionCreators(actionCreators, dispatch)
 
     return (
         <div id={'reset'}>
             <BiReset onClick={() => {
                 return (
                     RESET(),
+                        START_STOP(),
                         CLEAR_INTERVAL(intervalID),
+                        SESSION(),
                         START_STOP()
+
                 )
             }}/>
         </div>

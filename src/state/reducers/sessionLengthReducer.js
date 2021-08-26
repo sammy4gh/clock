@@ -1,4 +1,4 @@
-const sessionLengthReducer = (state = 25, action) => {
+const sessionLengthReducer = (state = 1, action) => {
     switch (action.type) {
         case 'SESSION_INCREMENT':
             return state + action.payload
@@ -7,7 +7,7 @@ const sessionLengthReducer = (state = 25, action) => {
         case 'SET_LIMIT':
             return state;
         case 'RESET':
-            return state = 25;
+            return state = 1;
         default:
             return state
     }

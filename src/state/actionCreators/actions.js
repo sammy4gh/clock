@@ -120,4 +120,22 @@ export const LIMIT_REACH = () => {
         })
     }
 }
+export const BREAK = () => {
+    return dispatch => {
+        dispatch({
+            type: 'BREAK',
+        })
 
+    }
+
+}
+export const SESSION = () => {
+    return dispatch => {
+        dispatch({type: 'SESSION'})
+    }
+}
+export const PAUSE_SOUND = () => {
+    return dispatch => {
+        dispatch({type: 'PAUSE_SOUND'})
+    }
+}

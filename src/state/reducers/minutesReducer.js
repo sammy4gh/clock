@@ -13,7 +13,7 @@ const minutesReducer = (state = moment().minute(25).seconds(0), action) => {
         case 'COUNTED_DOWN':
             return state = moment().minute(action.payload).seconds(0)
         case 'RESET':
-            return state = moment().minute(25).seconds(0)
+            return state = moment().minute(1).seconds(0)
         case 'PAUSE':
             return state
 

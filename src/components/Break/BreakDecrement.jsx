@@ -15,7 +15,6 @@ const BreakDecrement = (props) => {
         <div id={'break-decrement'}>
             <FaArrowDown onClick={() =>
                 break_length > 1 && break_length < 61 ? BREAK_DECREMENT() : LIMIT_REACH()
-
             }/>
         </div>
 
