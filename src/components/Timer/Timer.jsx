@@ -2,7 +2,6 @@ import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {bindActionCreators} from "redux";
 import {actionCreators} from "../../state";
-import {BREAK, BREAK_INCREMENT} from "../../state/actionCreators/actions";
 
 
 const Timer = (props) => {
@@ -10,10 +9,6 @@ const Timer = (props) => {
 
     const dispatch = useDispatch()
     const {
-        MINUTES_SUBTRACTION,
-        SECONDS_SUBTRACTION,
-        SECONDS,
-        RESET,
         START_STOP,
         BREAK_INCREMENT,
         CLEAR_INTERVAL,
@@ -21,17 +16,14 @@ const Timer = (props) => {
         BREAK_DECREMENT,
         BREAK,
         SESSION,
-        PLAY
     } = bindActionCreators(actionCreators, dispatch)
 
 
     const break_length = useSelector(state => state.break_length)
     const session_length = useSelector(state => state.session_length)
     const intervalID = useSelector((state) => state.timer)
-    const time = useSelector(state => state.minutes)
     const msg = useSelector(state => state.msg)
     const soundClip = useSelector(state => state.soundClip)
-    const playSound = useSelector(state => state.playSound)
     const minutes = useSelector(state => state.minutes.minutes())
     const seconds = useSelector(state => state.minutes.seconds())
 

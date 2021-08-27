@@ -134,13 +134,3 @@ export const SESSION = () => {
         dispatch({type: 'SESSION'})
     }
 }
-export const PAUSE_SOUND = () => {
-    return dispatch => {
-        dispatch({type: 'PAUSE_SOUND'})
-    }
-}
-export const PLAY = () => {
-    return dispatch => {
-        dispatch({type: 'PLAY'})
-    }
-}

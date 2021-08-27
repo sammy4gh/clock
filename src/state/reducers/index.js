@@ -7,7 +7,6 @@ import startStopReducer from "./startStopReducer";
 import timerReducer from "./timerReducer";
 import msgReducer from "./msgReducer"
 import soundClipReducer from "./soundClipReducer";
-import soundPlayReducer from "./soundPlayReducer";
 
 
 const reducers = combineReducers({
@@ -19,7 +18,6 @@ const reducers = combineReducers({
     timer: timerReducer,
     msg: msgReducer,
     soundClip: soundClipReducer,
-    playSound: soundPlayReducer,
 })
 
 export default reducers;

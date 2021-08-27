@@ -11,10 +11,8 @@ const StartStop = (props) => {
     const intervalID = useSelector((state) => state.timer)
     const dispatch = useDispatch()
     const {
-        SECONDS_SUBTRACTION: SECONDS_SUBTRACTION,
-        SECONDS,
+        SECONDS_SUBTRACTION,
         START_STOP,
-        PAUSE,
         SET_INTERVAL,
         CLEAR_INTERVAL
     } = bindActionCreators(actionCreators, dispatch)
