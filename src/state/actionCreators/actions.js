@@ -139,3 +139,8 @@ export const PAUSE_SOUND = () => {
         dispatch({type: 'PAUSE_SOUND'})
     }
 }
+export const PLAY = () => {
+    return dispatch => {
+        dispatch({type: 'PLAY'})
+    }
+}

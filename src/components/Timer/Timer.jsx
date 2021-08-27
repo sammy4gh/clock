@@ -20,7 +20,8 @@ const Timer = (props) => {
         COUNTED_DOWN,
         BREAK_DECREMENT,
         BREAK,
-        SESSION
+        SESSION,
+        PLAY
     } = bindActionCreators(actionCreators, dispatch)
 
 
@@ -30,26 +31,24 @@ const Timer = (props) => {
     const time = useSelector(state => state.minutes)
     const msg = useSelector(state => state.msg)
     const soundClip = useSelector(state => state.soundClip)
+    const playSound = useSelector(state => state.playSound)
     const minutes = useSelector(state => state.minutes.minutes())
     const seconds = useSelector(state => state.minutes.seconds())
 
+    function sound() {
+        const sound = document.getElementById(soundClip.id)
+        sound.currentTime = 0
+        sound.volume = 1
+        sound.play()
+        return sound;
+    }
 
     return (
 
         <div id={'timer'}>
 
-            {
-                function playSound() {
-                    const sound = document.getElementById(soundClip.id)
-                    sound.currentTime = 0
-                    sound.volume = 100
-                    sound ? sound.play() : sound.pause()
-                    return sound;
-                }
-            }
-
-            {minutes === 0 && seconds === 0 ? (COUNTED_DOWN(session_length), BREAK_DECREMENT(), BREAK()) : null}
-            {break_length < 1 ? (CLEAR_INTERVAL(intervalID), START_STOP(), BREAK_INCREMENT(), SESSION()) : null};
+            {minutes === 0 && seconds === 0 ? (COUNTED_DOWN(session_length), BREAK_DECREMENT(), BREAK(), sound()) : null}
+            {break_length < 1 ? (CLEAR_INTERVAL(intervalID), START_STOP(), BREAK_INCREMENT(), SESSION()) : null}
             <h3 id="timer-label">{msg}</h3>
             <audio id={soundClip.id} src={soundClip.src}>
 

@@ -1,4 +1,4 @@
-const breakLengthReducer = (state = 1, action) => {
+const breakLengthReducer = (state = 5, action) => {
     switch (action.type) {
         case 'BREAK_INCREMENT':
             return state + action.payload
