@@ -39,7 +39,9 @@ const Timer = (props) => {
 
         <div id={'timer'}>
 
-            {minutes === 0 && seconds === 0 ? (COUNTED_DOWN(session_length), BREAK_DECREMENT(), BREAK(), sound()) : null}
+            {
+                minutes === 0 && seconds === 0 ? (COUNTED_DOWN(session_length), BREAK_DECREMENT(), BREAK(), sound()) : null
+            }
             {break_length < 1 ? (CLEAR_INTERVAL(intervalID), START_STOP(), BREAK_INCREMENT(), SESSION()) : null}
             <h3 id="timer-label">{msg}</h3>
             <audio id={soundClip.id} src={soundClip.src}>

@@ -15,10 +15,9 @@ const BreakIncrement = (props) => {
         <div id="break-increment">
             <FaArrowUp onClick={() =>
                 break_length !== 0 && break_length < 61 ? BREAK_INCREMENT() : LIMIT_REACH()
-
             }/>
         </div>
-    );
+    )
 }
 
 export default BreakIncrement;

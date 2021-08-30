@@ -16,8 +16,8 @@ const Reset = (props) => {
         <div id={'reset'}>
             <BiReset onClick={() => {
                 return (
-                    RESET(),
-                        START_STOP(),
+                        RESET(),
+                            START_STOP(),
                         CLEAR_INTERVAL(intervalID),
                         SESSION(),
                         START_STOP()

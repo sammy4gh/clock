@@ -18,8 +18,6 @@ const SessionIncrement = (props) => {
             <FaArrowUp onClick={() => {
                 return (
                     session_length !== 0 && session_length < 61 ? (SESSION_INCREMENT() , MINUTES_ADDITION()) : LIMIT_REACH()
-
-
                 )
             }}/>
         </div>
