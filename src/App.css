@@ -1,0 +1,16 @@
+.App {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.header {
+    text-align: center;
+}
+
+.card {
+    background-color: #e7ccf0 !important;
+    border: none !important;
+}
+
